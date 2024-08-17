@@ -25,7 +25,7 @@ Noto Fonts, Noto Color Emoji, Symbols Nerd Fonts, source Han sans CN
 TODO
 
 ## Manual
-Install dependencies, and then just `ln -s` everything at the right place.
+Install dependencies, and then just `ln -s` everything at the right place. I'm not using stow to avoid the shitty folder structure in this repo
 
 Almost everything goes to `~/.config/`.
 ### exeptions
