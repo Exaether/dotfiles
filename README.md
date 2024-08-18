@@ -6,10 +6,6 @@
 i3, i3lock-colors, picom, polybar, rofi, dunst, feh, maim, fontconfig, pulseaudio,
 
 and maybe others things i've forgotten
-
-also need this:
-https://github.com/mihirlad55/polybar-spotify-module
-
 ## for cli:
 
 kitty, zsh + oh-my-zsh, tmux, neovim, fzf, yazi, bat, zoxide
@@ -69,3 +65,15 @@ Intall tpm for tmux:
 and then reload (`leader + r`) and install plugins (`leader + I`)
 
 Also check zsh plugins for anything to install/setup (like for thefuck and zsh-completions)
+
+### Spotify polybar module
+
+I'm using this one:
+https://github.com/mihirlad55/polybar-spotify-module
+it only work with spotify, and need to refresh it when restarting polybar (just need to pause then play)
+
+Another is pre-configured tho.
+It use playerctl, so it work with any player, and it have a scrolling status, but it's **MUCH** slower, since it use a script.
+If your CPU can handle it, it's prob better, but for me, it crashed polybar when using it in the first 2 minutes after startup.
+To set it up, use the `title` module instead of `spotify` and you may need to uncomment things from the contol modules.
+
