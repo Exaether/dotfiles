@@ -1,4 +1,3 @@
-
 # Dependencies
 
 ## for i3 environement:
@@ -10,7 +9,11 @@ and maybe others things i've forgotten
 
 kitty, zsh + oh-my-zsh, tmux, neovim, fzf, yazi, bat, zoxide
 
-## Fonts that are not in .local/share/fonts:
+### For neovim (mainly for lsp to install)
+
+luarocks, rust, cargo-asm, nodejs, npm
+
+## Fonts that are not in .local/share/fonts:
 
 Noto Fonts, Noto Color Emoji, Symbols Nerd Fonts, source Han sans CN
 
@@ -25,12 +28,11 @@ Install dependencies, and then just `ln -s` everything at the right place. I'm n
 
 Almost everything goes to `~/.config/`.
 ### exeptions
-- tmux: link only the config file, not the entire folder
+- tmux: link only the config file, not the entire folder (y'll need to run '\<leader>I' to install the plugins)
 - zsh folder
 	- .zshrc goes in `~/` (am i really writhing this?)
-- local folder
-	- `scripts/` goes directly in `~/.local/`
-	- things in `share/` goes in `~/.local/share` (do not link the entire `share` folder, only what's inside)
+- `fonts` goes in `.local/share`
+- `scripts` goes in `.local/`
 - `wallpapers` folder goes in home
 - that's about it.
 

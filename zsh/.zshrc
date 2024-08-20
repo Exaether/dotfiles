@@ -2,7 +2,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="gnzh"
-export EDITOR="micro"
+export EDITOR="nvim"
 
 # Adding things to the PATH
 #PATH="$PATH:something"
@@ -32,7 +32,7 @@ function yy() {
 
 # Aliases
 alias fzf='fzf --preview="bat --color=always {}"'
-alias mff='micro $(fzf --preview="bat --color=always {}")'
+alias vff='nvim $(fzf --preview="bat --color=always {}")'
 alias vi='nvim'
 alias kys="sudo shutdown"
 

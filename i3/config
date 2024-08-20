@@ -7,7 +7,6 @@ exec --no-startup-id xss-lock --transfer-sleep-lock
 exec --no-startup-id nm-applet
 
 # Volume contol
-set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
@@ -32,7 +31,7 @@ exec --no-startup-id dunst
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # auto lock the screen
-exec xautolock -detectsleep -time 3 -locker \"$HOME/.local/scripts/lockscreen.sh\"
+exec xautolock -detectsleep -time 3 -corners +00- -cornerdelay 2 -cornerredelay 20 -cornersize 4 -locker \"$HOME/.local/scripts/lockscreen.sh\"
 
 # Moving windows
 floating_modifier $mod
@@ -40,6 +39,7 @@ tiling_drag modifier titlebar
 
 # start a terminal
 bindsym $mod+Return exec kitty
+bindsym $mod+Shift+Return exec kitty -e tmux
 
 # kill focused window
 bindsym $mod+Shift+a kill
@@ -167,7 +167,7 @@ bindsym $mod+r mode "resize"
 
 
 # Set the desktop background with Feh
-exec --no-startup-id feh --bg-scale ~/wallpapers/narwhal.jpg
+exec --no-startup-id feh --bg-fill --randomize ~/wallpapers/*
 
 # Start the compositor, daemonize it (-b)
 exec_always --no-startup-id picom -b
