@@ -2,9 +2,35 @@ set $mod Mod4
 
 font pango:monospace 8
 
+floating_modifier $mod
+tiling_drag modifier titlebar
+
+##################################### SETUP
+
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock
 exec --no-startup-id nm-applet
+
+# Start Blueman
+exec --no-startup-id blueman-applet
+
+# start dunst
+exec --no-startup-id dunst
+
+# Start polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Set the desktop background with Feh
+exec --no-startup-id feh --bg-fill --randomize ~/wallpapers/*
+
+# Start the compositor, daemonize it (-b)
+exec_always --no-startup-id picom -b
+
+# Auto lock the screen
+# Put the mouse is up left corner to lock, and in bottom right to disable lock
+exec xautolock -detectsleep -time 3 -corners +00- -cornerdelay 2 -cornerredelay 20 -cornersize 4 -locker \"$HOME/.local/scripts/lockscreen.sh\"
+
+##################################### KEYBINDS
 
 # Volume contol
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
@@ -16,38 +42,20 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +16
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 16-
 
-# Toggle touchpad touchpad
+# Toggle touchpad (does not seem to work yet...)
 bindsym XF86TouchpadToggle exec --no-startup-id ~/.local/scripts/toggle_touchpad.sh
 
-# Start Blueman
-exec --no-startup-id blueman-applet
-# Set blueman window to floating
-for_window [class="blueman-manager"] floating enable
-
-# start dunst
-exec --no-startup-id dunst
-
-# Start polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
-# auto lock the screen
-exec xautolock -detectsleep -time 3 -corners +00- -cornerdelay 2 -cornerredelay 20 -cornersize 4 -locker \"$HOME/.local/scripts/lockscreen.sh\"
-
-# Moving windows
-floating_modifier $mod
-tiling_drag modifier titlebar
-
-# start a terminal
+# Start a terminal
 bindsym $mod+Return exec kitty
 bindsym $mod+Shift+Return exec kitty -e tmux
 
-# kill focused window
+# Kill focused window
 bindsym $mod+Shift+a kill
 
-# start rofi
+# Start rofi
 bindsym $mod+d exec --no-startup-id $HOME/.config/rofi/launcher/launcher.sh
 
-# change focus
+# Change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
@@ -58,7 +66,7 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# move focused window
+# Move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
@@ -69,21 +77,46 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split
+# Control layout
 bindsym $mod+g split h
 bindsym $mod+v split v
+bindsym $mod+q focus parent
+bindsym $mod+w focus child
 
 # Fullscreen
 bindsym $mod+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
+# Change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+z layout tabbed
 bindsym $mod+e layout toggle split
 
-# tiling / floating control
+# Tiling / floating control
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# Exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec $HOME/.config/rofi/powermenu/powermenu.sh
+
+# Update packages database
+bindsym $mod+Shift+p exec kitty -e sudo pacman -Syu
+
+# Screenshots
+## Normal
+bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
+bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"
+bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
+
+## Clipboard 
+bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png 
+bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
 ##################################### WORKSPACES
 
@@ -99,11 +132,11 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-# iterate between workspaces
+# Iterate between workspaces
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
-# switch to workspace
+# Switch to workspace
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
 bindsym $mod+3 workspace number $ws3
@@ -115,7 +148,7 @@ bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
-# move focused container to workspace
+# Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3
@@ -131,17 +164,6 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 assign [class="firefox"] $ws2
 assign [class="discord"] $ws3
 assign [class="Spotify"] $ws4
-
-
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec $HOME/.config/rofi/powermenu/powermenu.sh
-# update packages database
-bindsym $mod+Shift+p exec kitty -e sudo pacman -Syu
-
 
 ##################################### RESIZE MODE
 
@@ -163,26 +185,6 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "resize"
-
-
-
-# Set the desktop background with Feh
-exec --no-startup-id feh --bg-fill --randomize ~/wallpapers/*
-
-# Start the compositor, daemonize it (-b)
-exec_always --no-startup-id picom -b
-
-##################################### SCREENSHOTS
-
-## Normal
-bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
-bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"
-bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
-
-## Clipboard 
-bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
-bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png 
-bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
 ##################################### WINDOWS APPEARANCE
 

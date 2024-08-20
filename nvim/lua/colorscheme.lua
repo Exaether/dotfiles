@@ -55,10 +55,12 @@ return function(colors)
 
 		-- Special groups
 
-		CursorLineNr = { fg = colors.text },
-		LineNr = { fg = colors.sky },
+		CursorLineNr = { fg = colors.yellow },
+		LineNr = { fg = colors.crust },
 		FloatBorder = { fg = colors.blue },
-		Folded = { fg = colors.crust, bg = "#45475a" },
+		CursorLine = { bg = "#453525" },
+		Folded = { fg = colors.crust, bg = "#302010" },
+		Visual = { bg = "#504030" },
 		StatusLineNC = { fg = colors.text },
 		VertSplit = { fg = colors.blue },
 		WinSeparator = { link = "VertSplit" },
