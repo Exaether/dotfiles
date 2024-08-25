@@ -27,8 +27,8 @@ exec --no-startup-id feh --bg-fill --randomize ~/wallpapers/*
 exec_always --no-startup-id picom -b
 
 # Auto lock the screen
-# Put the mouse is up left corner to lock, and in bottom right to disable lock
-exec xautolock -detectsleep -time 3 -corners +00- -cornerdelay 2 -cornerredelay 20 -cornersize 4 -locker \"$HOME/.local/scripts/lockscreen.sh\"
+# Put the mouse is up left corner to lock, and in any other corner to disable lock
+exec xautolock -detectsleep -time 3 -corners +--- -cornerdelay 2 -cornerredelay 20 -cornersize 4 -locker \"$HOME/.local/scripts/lockscreen.sh\"
 
 ##################################### KEYBINDS
 

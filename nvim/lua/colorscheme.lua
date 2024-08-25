@@ -74,7 +74,7 @@ return function(colors)
 
 		-- Custom colors
 
-		Builtin = { fg = colors.blue },
+		Builtin = { fg = colors.yellow },
 
 		-- Tree sitter highlight groups
 

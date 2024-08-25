@@ -27,10 +27,11 @@ vim.opt.cursorline = true
 vim.opt.encoding = "utf-8"
 vim.opt.mouse = "a"
 vim.opt.number = true
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
 vim.opt.showmode = false
 vim.opt.termguicolors = true
 vim.opt.wildmode = "longest,list"
+vim.opt.wrap = false
 
 -- Setting leader key
 vim.g.mapleader = " "

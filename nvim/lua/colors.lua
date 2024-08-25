@@ -13,6 +13,7 @@ return {
 	blue = "#407EE7",
 	pink = "#f04086",
 	teal = "#11a4ae",
+	orange = "#ED7F10",
 
 	-- Extended Colors
 	lavender = "#b480ff",
