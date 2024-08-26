@@ -1,3 +1,9 @@
+# Intro
+
+*This is a personal installation guide*, feel free to not follow it and do whatever you want with theses conf files.
+This repo is made to be easily understandable and very modular, so anyone can copy part of it without being bothered by the rest.
+
+
 # Dependencies
 
 ## for i3 environment:
@@ -27,7 +33,7 @@ TODO
 Install dependencies, and then just `ln -s` everything at the right place. I'm not using stow to avoid the shitty folder structure in this repo
 
 Almost everything goes to `~/.config/`.
-### exceptions
+### Exceptions
 - tmux: link only the config file, not the entire folder (you'll need to run '\<leader>I' to install the plugins)
 - zsh folder
 	- .zshrc goes in `~/` (am i really writhing this?)
@@ -37,7 +43,7 @@ Almost everything goes to `~/.config/`.
 - that's about it.
 
 
-## additionnal config
+## additional config
 
 ### Set up git
 Obviously, install git...
