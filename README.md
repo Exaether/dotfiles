@@ -1,10 +1,10 @@
 # Dependencies
 
-## for i3 environement:
+## for i3 environment:
 
 i3, i3lock-colors, picom, polybar, rofi, dunst, feh, maim, fontconfig, pulseaudio,
 
-and maybe others things i've forgotten
+And maybe others things I've forgotten
 ## for cli:
 
 kitty, zsh + oh-my-zsh, tmux, neovim, fzf, yazi, bat, zoxide
@@ -27,8 +27,8 @@ TODO
 Install dependencies, and then just `ln -s` everything at the right place. I'm not using stow to avoid the shitty folder structure in this repo
 
 Almost everything goes to `~/.config/`.
-### exeptions
-- tmux: link only the config file, not the entire folder (y'll need to run '\<leader>I' to install the plugins)
+### exceptions
+- tmux: link only the config file, not the entire folder (you'll need to run '\<leader>I' to install the plugins)
 - zsh folder
 	- .zshrc goes in `~/` (am i really writhing this?)
 - `fonts` goes in `.local/share`
@@ -55,14 +55,14 @@ and create a folder for work repos with another .gitconfig inside:
     email = work email
 ```
 
-also setup GCM:
+Also setup GCM:
 https://github.com/git-ecosystem/git-credential-manager/blob/release/docs/install.md
 use the source install script, cause else, the .NET tool version will fuck you up cause it want an older version
 
 ### tmux and zsh plugins
 *Note that will prob be automated in the install script*
 
-Intall tpm for tmux:
+Install tpm for tmux:
 `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
 and then reload (`leader + r`) and install plugins (`leader + I`)
 
@@ -77,5 +77,5 @@ it only work with spotify, and need to refresh it when restarting polybar (just 
 Another is pre-configured tho.
 It use playerctl, so it work with any player, and it have a scrolling status, but it's **MUCH** slower, since it use a script.
 If your CPU can handle it, it's prob better, but for me, it crashed polybar when using it in the first 2 minutes after startup.
-To set it up, use the `title` module instead of `spotify` and you may need to uncomment things from the contol modules.
+To set it up, use the `title` module instead of `spotify` and you may need to uncomment things from the control modules.
 

@@ -9,8 +9,8 @@ return {
 	-- Regular Colors
 	red = "#B90E0A",
 	green = "#3cab07",
-	yellow = "#ED7F10",
-	blue = "#407EE7",
+	yellow = "#FFC000",
+	blue = "#0047AB",
 	pink = "#f04086",
 	teal = "#11a4ae",
 	orange = "#ED7F10",
@@ -23,4 +23,5 @@ return {
 	sapphire = "#3484ff",
 	sky = "#a0d9ef",
 	maroon = "#800000",
+	lemon = "#FAFA33",
 }

@@ -13,7 +13,7 @@ return function(colors)
 		Float = { link = "Number" },
 
 		Identifier = { fg = colors.text },
-		Function = { fg = colors.sapphire, style = { "bold" } },
+		Function = { fg = colors.orange, style = { "bold" } },
 
 		Statement = { fg = colors.red, style = { "bold" } },
 		Conditional = { link = "Statement" },
@@ -34,8 +34,8 @@ return function(colors)
 		Structure = { link = "Type" },
 		Typedef = { link = "Type" },
 
-		Special = { fg = colors.peach },
-		SpecialChar = { fg = colors.peach },
+		Special = { fg = colors.orange },
+		SpecialChar = { fg = colors.orange },
 		Tag = { fg = colors.red },
 		Delimiter = { fg = colors.peach },
 		SpecialComment = { fg = colors.yellow },
@@ -55,14 +55,14 @@ return function(colors)
 
 		-- Special groups
 
-		CursorLineNr = { fg = colors.yellow },
+		CursorLineNr = { fg = colors.orange },
 		LineNr = { fg = colors.crust },
 		FloatBorder = { fg = colors.blue },
 		CursorLine = { bg = "#453525" },
 		Folded = { fg = colors.crust, bg = "#302010" },
 		Visual = { bg = "#504030" },
 		StatusLineNC = { fg = colors.text },
-		VertSplit = { fg = colors.blue },
+		VertSplit = { fg = colors.orange },
 		WinSeparator = { link = "VertSplit" },
 
 		BufferLineOffsetSeparator = { fg = colors.red },
@@ -74,7 +74,7 @@ return function(colors)
 
 		-- Custom colors
 
-		Builtin = { fg = colors.yellow },
+		Builtin = { fg = colors.orange },
 
 		-- Tree sitter highlight groups
 
@@ -121,7 +121,7 @@ return function(colors)
 		TSFuncBuiltin = { link = "Builtin" },
 		TSFuncMacro = { link = "TSFunction" },
 		TSFunction = { link = "Function" },
-		TSFunctionCall = { fg = colors.lavender },
+		TSFunctionCall = { fg = colors.lemon },
 		TSKeywordFunction = { link = "Keyword" },
 		TSKeywordOperator = { link = "Keyword" },
 		TSKeywordReturn = { link = "Keyword" },

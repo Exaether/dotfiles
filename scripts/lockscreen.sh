@@ -10,6 +10,7 @@ VERIFYING='#FF7000'
 WRONG='#ff0000'
 
 i3lock \
+--nofork					\
 --insidever-color=$BACKGROUND     \
 --ringver-color=$VERIFYING   \
 \
