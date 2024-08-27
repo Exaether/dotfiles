@@ -42,7 +42,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +16
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 16-
 
-# Toggle touchpad (does not seem to work yet...)
+# Toggle touchpad 
 bindsym XF86TouchpadToggle exec --no-startup-id ~/.local/scripts/toggle_touchpad.sh
 
 # Start a terminal
