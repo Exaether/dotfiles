@@ -8,10 +8,10 @@ This repo is made to be easily understandable and very modular, so anyone can co
 
 ## for i3 environment:
 
-i3, i3lock-colors, picom, polybar, rofi, dunst, feh, maim, fontconfig, pulseaudio, xautolock
+i3, ly, i3lock-colors, picom, polybar, rofi, dunst, feh, maim, fontconfig, pulseaudio, xautolock, xclip, xdg-utils
 
 And maybe others things I've forgotten
-/!\ at least for now, i3lock-colors is fucked up, you'll need to add things to the BKGBUILD before building it (refer to the AUR page, comment section)
+/!\ at least for now, i3lock-colors is fucked up, you'll need to add things to the PKGBUILD before building it (refer to the AUR page, comment section)
 
 ## for cli:
 
@@ -19,7 +19,7 @@ kitty, zsh + oh-my-zsh, tmux, neovim, fzf, yazi, bat, zoxide
 
 ### For neovim (mainly for lsp to install)
 
-luarocks, rust, cargo-asm, nodejs, npm
+luarocks, rust, cargo-asm, nodejs, npm, treesitter-cli, dotnet-runtime
 
 ## Fonts that are not in .local/share/fonts:
 
@@ -66,6 +66,7 @@ and create a folder for work repos with another .gitconfig inside:
 Also setup GCM:
 https://github.com/git-ecosystem/git-credential-manager/blob/release/docs/install.md
 use the source install script, cause else, the .NET tool version will fuck you up cause it want an older version
+this require to install dotnet-sdk
 
 ### tmux and zsh plugins
 *Note that will prob be automated in the install script*
