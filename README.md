@@ -8,9 +8,11 @@ This repo is made to be easily understandable and very modular, so anyone can co
 
 ## for i3 environment:
 
-i3, i3lock-colors, picom, polybar, rofi, dunst, feh, maim, fontconfig, pulseaudio,
+i3, i3lock-colors, picom, polybar, rofi, dunst, feh, maim, fontconfig, pulseaudio, xautolock
 
 And maybe others things I've forgotten
+/!\ at least for now, i3lock-colors is fucked up, you'll need to add things to the BKGBUILD before building it (refer to the AUR page, comment section)
+
 ## for cli:
 
 kitty, zsh + oh-my-zsh, tmux, neovim, fzf, yazi, bat, zoxide
@@ -21,7 +23,7 @@ luarocks, rust, cargo-asm, nodejs, npm
 
 ## Fonts that are not in .local/share/fonts:
 
-Noto Fonts, Noto Color Emoji, Symbols Nerd Fonts, source Han sans CN
+Noto Fonts, Noto Color Emoji, Symbols Nerd Fonts **Mono**, source Han sans CN
 
 
 # Installation
