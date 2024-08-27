@@ -30,6 +30,9 @@ exec_always --no-startup-id picom -b
 # Put the mouse is up left corner to lock, and in any other corner to disable lock
 exec xautolock -detectsleep -time 3 -corners +--- -cornerdelay 2 -cornerredelay 20 -cornersize 4 -locker \"$HOME/.local/scripts/lockscreen.sh\"
 
+# Disable touchpad by default
+exec ~/.local/scripts/toggle_touchpad.sh
+
 ##################################### KEYBINDS
 
 # Volume contol
@@ -105,7 +108,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec $HOME/.config/rofi/powermenu/powermenu.sh
 
 # Update packages database
-bindsym $mod+Shift+p exec kitty -e sudo pacman -Syu
+bindsym $mod+Shift+p exec kitty -e yay -Syu
 
 # Screenshots
 ## Normal
