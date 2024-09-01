@@ -49,8 +49,8 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 16-
 bindsym XF86TouchpadToggle exec --no-startup-id ~/.local/scripts/toggle_touchpad.sh
 
 # Start a terminal
-bindsym $mod+Return exec kitty
-bindsym $mod+Shift+Return exec kitty -e tmux
+bindsym $mod+Shift+Return exec kitty
+bindsym $mod+Return exec kitty -e tmux
 
 # Kill focused window
 bindsym $mod+Shift+a kill
