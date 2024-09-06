@@ -23,7 +23,6 @@ return {
 		config = function()
 			require("mason-tool-installer").setup({
 				ensure_installed = {
-					"asm_lsp",
 					"autotools_ls",
 					"basedpyright",
 					"bashls",
@@ -44,7 +43,6 @@ return {
 					"sqlls",
 					"taplo",
 					"texlab",
-					"tsserver",
 					"yamlls",
 				},
 			})
@@ -58,7 +56,6 @@ return {
 
 			capabilities.offsetEncoding = "utf-8"
 
-			lspconfig.asm_lsp.setup({ capabilities = capabilities })
 			lspconfig.bashls.setup({ capabilities = capabilities })
 			lspconfig.clangd.setup({ capabilities = capabilities })
 			lspconfig.csharp_ls.setup({ capabilities = capabilities })
@@ -67,7 +64,6 @@ return {
 			lspconfig.html.setup({ capabilities = capabilities })
 			lspconfig.jsonls.setup({ capabilities = capabilities })
 			lspconfig.jdtls.setup({ capabilities = capabilities })
-			lspconfig.tsserver.setup({ capabilities = capabilities })
 			lspconfig.texlab.setup({ capabilities = capabilities })
 			lspconfig.lua_ls.setup({ capabilities = capabilities })
 			lspconfig.autotools_ls.setup({ capabilities = capabilities })

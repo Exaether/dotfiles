@@ -33,23 +33,10 @@ return {
 					["<C-e>"] = cmp.mapping.abort(),
 					["<C-j>"] = cmp.mapping.select_next_item(),
 					["<C-k>"] = cmp.mapping.select_prev_item(),
-					['<CR>'] = cmp.mapping(function(fallback)
-						if cmp.visible() then
-							if luasnip.expandable() then
-								luasnip.expand()
-							else
-								cmp.confirm({
-									select = true,
-								})
-							end
-						else
-							fallback()
-						end
-					end),
-
+					["<CR>"] = cmp.mapping.confirm({ select = false }),
 					["<Tab>"] = cmp.mapping(function(fallback)
 						if cmp.visible() then
-							cmp.select_next_item()
+							cmp.confirm({ select = true })
 						elseif luasnip.locally_jumpable(1) then
 							luasnip.jump(1)
 						else
@@ -59,7 +46,7 @@ return {
 
 					["<S-Tab>"] = cmp.mapping(function(fallback)
 						if cmp.visible() then
-							cmp.select_prev_item()
+							cmp.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace })
 						elseif luasnip.locally_jumpable(-1) then
 							luasnip.jump(-1)
 						else
