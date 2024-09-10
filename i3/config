@@ -191,6 +191,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 ##################################### WINDOWS APPEARANCE
+for_window [instance="Godot_Engine"] floating enable
 
 # Borders
 default_border none
