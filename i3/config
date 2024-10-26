@@ -110,6 +110,9 @@ bindsym $mod+Shift+e exec $HOME/.config/rofi/powermenu/powermenu.sh
 # Update packages database
 bindsym $mod+Shift+p exec kitty -e yay -Syu
 
+# Change wallpaper
+bindsym $mod+Shift+m exec feh --randomize --bg-fill ~/wallpapers/*
+
 # Screenshots
 ## Normal
 bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
