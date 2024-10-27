@@ -167,10 +167,12 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # Assign apps to certains WS
-assign [class="firefox"] $ws2
-assign [class="zen"] $ws2
-assign [class="discord"] $ws3
-assign [class="Spotify"] $ws4
+assign [class="Godot"] $ws1
+assign [instance="Godot_Engine"] $ws2
+assign [class="firefox"] $ws3
+assign [class="zen"] $ws3
+assign [class="discord"] $ws4
+assign [class="Spotify"] $ws5
 
 ##################################### RESIZE MODE
 
@@ -194,7 +196,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 ##################################### WINDOWS APPEARANCE
-for_window [instance="Godot_Engine"] floating enable
+#for_window [instance="Godot_Engine"] floating enable
 
 # Borders
 default_border none
