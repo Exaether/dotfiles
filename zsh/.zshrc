@@ -35,6 +35,8 @@ alias fzf='fzf --preview="bat --color=always {}"'
 alias vff='nvim $(fzf --preview="bat --color=always {}")'
 alias vi='nvim'
 alias kys="sudo shutdown"
+alias clr="clear"
+alias nv="nvim"
 
 # Start tmux automatically
 #if [[ $SHLVL < "2" ]]
