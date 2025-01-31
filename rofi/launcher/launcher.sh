@@ -3,4 +3,4 @@
 ## Run
 rofi \
     -show drun \
-    -theme $HOME/.config/rofi/launcher/sidebar.rasi
+    -theme $HOME/.config/rofi/launcher/default.rasi
