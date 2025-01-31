@@ -8,7 +8,7 @@ This repo is made to be easily understandable and very modular, so anyone can co
 
 ## for i3 environment:
 
-i3, ly, i3lock-colors, picom, polybar, rofi, dunst, feh, maim, fontconfig, pulseaudio, xautolock, xclip, xdg-utils
+i3, ly, i3lock-colors, picom, polybar, rofi, dunst, feh, maim, fontconfig, pulseaudio, brightnessctl, xautolock, xclip, xdg-utils
 
 And maybe others things I've forgotten
 /!\ at least for now, i3lock-colors is fucked up, you'll need to add things to the PKGBUILD before building it (refer to the AUR page, comment section)
@@ -69,7 +69,6 @@ use the source install script, cause else, the .NET tool version will fuck you u
 this require to install dotnet-sdk
 
 ### tmux and zsh plugins
-*Note that will prob be automated in the install script*
 
 Install tpm for tmux:
 `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
@@ -79,12 +78,6 @@ Also check zsh plugins for anything to install/setup (like for thefuck and zsh-c
 
 ### Spotify polybar module
 
-I'm using this one:
+I don't use one anymore, but this one is configured (just need to add the modules to the main bar)
 https://github.com/mihirlad55/polybar-spotify-module
 it only work with spotify, and need to refresh it when restarting polybar (just need to pause then play)
-
-Another is pre-configured tho.
-It use playerctl, so it work with any player, and it have a scrolling status, but it's **MUCH** slower, since it use a script.
-If your CPU can handle it, it's prob better, but for me, it crashed polybar when using it in the first 2 minutes after startup.
-To set it up, use the `title` module instead of `spotify` and you may need to uncomment things from the control modules.
-
