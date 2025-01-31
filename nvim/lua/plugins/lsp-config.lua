@@ -27,13 +27,14 @@ return {
 					"basedpyright",
 					"bashls",
 					"black",
-					-- "clang-format",
+					"clang-format",
 					"clangd",
 					"cmake",
 					"csharp_ls",
 					"cssls",
 					"html",
-					"intelephense",
+					-- "intelephense",
+					"phpactor",
 					"jdtls",
 					"jsonls",
 					"lemminx",
@@ -68,7 +69,8 @@ return {
 			lspconfig.lua_ls.setup({ capabilities = capabilities })
 			lspconfig.autotools_ls.setup({ capabilities = capabilities })
 			lspconfig.marksman.setup({ capabilities = capabilities })
-			lspconfig.intelephense.setup({ capabilities = capabilities })
+			-- lspconfig.intelephense.setup({ capabilities = capabilities })
+			lspconfig.phpactor.setup({ capabilities = capabilities })
 			lspconfig.basedpyright.setup({ capabilities = capabilities })
 			lspconfig.r_language_server.setup({ capabilities = capabilities })
 			lspconfig.sqlls.setup({ capabilities = capabilities })
