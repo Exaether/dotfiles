@@ -12,7 +12,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock
 exec --no-startup-id nm-applet
 
 # Start Blueman
-exec --no-startup-id blueman-applet
+# exec --no-startup-id blueman-applet
 
 # start dunst
 exec --no-startup-id dunst
