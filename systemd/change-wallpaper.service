@@ -1,0 +1,7 @@
+[Unit]
+Description=Change the wallpaper
+
+[Service]
+Environment=DISPLAY=:0
+ExecStart=/bin/sh %h/.local/scripts/feh_change.sh
+
