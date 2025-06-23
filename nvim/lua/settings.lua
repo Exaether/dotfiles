@@ -31,7 +31,7 @@ vim.opt.relativenumber = true
 vim.opt.showmode = false
 vim.opt.termguicolors = true
 vim.opt.wildmode = "longest,list"
-vim.opt.wrap = false
+vim.opt.wrap = true
 
 -- Setting leader key
 vim.g.mapleader = " "

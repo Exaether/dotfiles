@@ -6,7 +6,13 @@ export EDITOR="nvim"
 
 # Adding things to the PATH
 #PATH="$PATH:something"
-#export PATH
+PATH="$PATH:£+$HOME/.symfony5/bin/symfony"
+PATH="$PATH:/usr/local/texlive/2025/bin/x86_64-linux"
+export PATH
+MANPATH="$MANPATH:/usr/local/texlive/2025/texmf-dist/doc/man"
+INFOPATH="$INFOPATH:/usr/local/texlive/2025/texmf-dist/doc/info"
+export MANPATH
+export INFOPATH
 
 # Oh my zsh plugins
 plugins=(git colored-man-pages thefuck zsh-completions)

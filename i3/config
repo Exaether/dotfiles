@@ -21,7 +21,7 @@ exec --no-startup-id dunst
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Set the desktop background with Feh
-exec --no-startup-id feh --bg-fill --randomize ~/wallpapers/*
+exec --no-startup-id feh --no-fehbg --bg-fill --randomize ~/wallpapers/*
 
 # Start the compositor, daemonize it (-b)
 exec_always --no-startup-id picom -b
@@ -51,6 +51,7 @@ bindsym XF86TouchpadToggle exec --no-startup-id ~/.local/scripts/toggle_touchpad
 # Start a terminal
 bindsym $mod+Shift+Return exec kitty
 bindsym $mod+Return exec kitty -e tmux
+bindsym $mod+Shift+n exec kitty -e tmux attach
 
 # Kill focused window
 bindsym $mod+Shift+a kill
@@ -107,11 +108,14 @@ bindsym $mod+Shift+r restart
 # Exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec $HOME/.config/rofi/powermenu/powermenu.sh
 
+# Enable second screen
+bindsym $mod+Shift+o exec xrandr --output HDMI-A-0 --auto --right-of eDP
+
 # Update packages database
 bindsym $mod+Shift+p exec kitty -e paru -Syu
 
 # Change wallpaper
-bindsym $mod+Shift+m exec feh --randomize --bg-fill ~/wallpapers/*
+bindsym $mod+Shift+m exec feh --no-fehbg --randomize --bg-fill ~/wallpapers/*
 
 # Screenshots
 ## Normal
@@ -165,6 +169,10 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# Move workspace to monitor
+bindsym $mod+p move workspace to output right
+bindsym $mod+o move workspace to output left
 
 # Assign apps to certains WS
 assign [class="Godot"] $ws1
