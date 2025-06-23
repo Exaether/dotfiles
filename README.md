@@ -42,6 +42,7 @@ Almost everything goes to `~/.config/`.
 - `fonts` goes in `.local/share`
 - `scripts` goes in `.local/`
 - `wallpapers` folder goes in home
+- `systemd` as `.config/systemd/user`
 - that's about it.
 
 
