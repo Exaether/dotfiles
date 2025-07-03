@@ -32,6 +32,7 @@ vim.opt.showmode = false
 vim.opt.termguicolors = true
 vim.opt.wildmode = "longest,list"
 vim.opt.wrap = true
+vim.opt.exrc = true
 
 -- Setting leader key
 vim.g.mapleader = " "
@@ -64,3 +65,4 @@ vim.fn.sign_define("DapStopped", {
 	texthl = "DapStoppedSymbol",
 	numhl = "DapBreakpoint",
 })
+

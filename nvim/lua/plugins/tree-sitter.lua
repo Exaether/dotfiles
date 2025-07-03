@@ -10,7 +10,7 @@ return {
 					"bash", "bibtex",
 					"c", "c_sharp", "cmake", "cpp", "css", "csv",
 					"git_config", "gitcommit", "gitignore", "gpg",
-					"html", "http",
+					"html", "http", "twig",
 					"ini",
 					"java", "javascript", "json", "json5",
 					"latex",

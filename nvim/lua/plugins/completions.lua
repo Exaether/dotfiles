@@ -7,6 +7,17 @@ return {
 		dependencies = {
 			"saadparwaiz1/cmp_luasnip",
 			"rafamadriz/friendly-snippets",
+			{
+			  "jdrupal-dev/css-vars.nvim",
+			  opts = {
+				-- If you use CSS-in-JS, you can add the autocompletion to JS/TS files.
+				cmp_filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+				-- WARNING: The search is not optimized to look for variables in JS files.
+				-- If you change the search_extensions you might get false positives and weird completion results.
+				search_extensions = { ".js", ".ts", ".jsx", ".tsx" }
+			  },
+			},
+			'roginfarrer/cmp-css-variables',
 		},
 	},
 	{
@@ -57,6 +68,8 @@ return {
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" },
+					{ name = "css_vars" },
+					{ name = 'css-variables' },
 				}, {
 					{ name = "buffer" },
 				}),
