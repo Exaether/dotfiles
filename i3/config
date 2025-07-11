@@ -42,8 +42,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 # Brightness control
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +16
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 16-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
 # Toggle touchpad 
 bindsym XF86TouchpadToggle exec --no-startup-id ~/.local/scripts/toggle_touchpad.sh
